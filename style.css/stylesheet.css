@@ -822,3 +822,127 @@ footer .highlight {
   .section-title { font-size: 1.1rem; margin-bottom: 18px; }
   .btn-primary { font-size: 0.95rem; padding: 8px 12px; }
 }
+
+/* --- Responsive Fixes for Mobile Devices --- */
+@media (max-width: 700px) {
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .main-header {
+    padding: 0 4vw !important;
+    height: 54px !important;
+  }
+  .logo-img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .logo-text {
+    font-size: 1.1rem !important;
+  }
+  .navbar {
+    padding: 70px 8px 0 8px !important;
+    width: 85vw !important;
+  }
+  .navbar ul {
+    gap: 14px !important;
+  }
+  .hero-section {
+    min-height: 70vh !important;
+    padding: 18px 0 !important;
+  }
+  .hero-container {
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding: 0 6vw !important;
+  }
+  .hero-glass-card {
+    padding: 14px 4vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    border-radius: 14px !important;
+  }
+  .hero-profile-img {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .about-section {
+    padding: 30px 0 18px 0 !important;
+  }
+  .about-header-row {
+    margin-bottom: 10px !important;
+  }
+  .about-cards-wrap {
+    gap: 12px !important;
+    padding: 0 4vw !important;
+  }
+  .about-card-glass,
+  .about-skills-glass {
+    padding: 16px 4vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+  }
+  .projects-section {
+    padding: 40px 0 30px 0 !important;
+  }
+  .projects-header-row {
+    margin-bottom: 10px !important;
+  }
+  .projects-grid {
+    gap: 10px !important;
+    padding: 0 2vw !important;
+  }
+  .project-flip-card {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    min-width: 0 !important;
+    height: 320px !important;
+  }
+  .project-img {
+    height: 70px !important;
+    margin-top: 18px !important;
+  }
+  .resume-section {
+    padding: 30px 0 18px 0 !important;
+  }
+  .resume-card {
+    padding: 10px 2vw !important;
+    max-width: 98vw !important;
+  }
+  .resume-frame {
+    height: 120px !important;
+  }
+  .contact-section {
+    padding: 30px 0 18px 0 !important;
+  }
+  .contact-form {
+    padding: 10px 2vw !important;
+    max-width: 98vw !important;
+  }
+  .footer-content {
+    padding: 0 2vw !important;
+    gap: 8px !important;
+  }
+  .footer-social-row {
+    gap: 8px !important;
+  }
+  .footer-social-link {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+  .footer-text {
+    font-size: 0.92rem !important;
+  }
+  .footer-animated-bar {
+    margin-top: 18px !important;
+  }
+  .section-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+  }
+  .btn-primary {
+    font-size: 0.95rem !important;
+    padding: 8px 12px !important;
+  }
+}
