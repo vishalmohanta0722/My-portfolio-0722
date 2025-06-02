@@ -112,3 +112,35 @@ document.querySelectorAll('.project-flip-card').forEach(card => {
         }
     });
 });
+
+// navbar and hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.getElementById("navbar");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navbar.classList.toggle("open");
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (navbar.classList.contains("open")) {
+        navbar.classList.remove("open");
+        hamburger.classList.remove("active");
+      }
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      navbar.classList.contains("open") &&
+      !navbar.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      navbar.classList.remove("open");
+      hamburger.classList.remove("active");
+    }
+  });
+});
