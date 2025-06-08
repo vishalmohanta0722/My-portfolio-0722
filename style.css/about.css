@@ -160,7 +160,7 @@ img {
 /* === ABOUT CARDS === */
 .about-cards-wrap {
   display: flex;
-  gap: 36px;
+  gap: 16px;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
@@ -180,6 +180,7 @@ img {
   transition: transform 0.25s, box-shadow 0.25s;
   position: relative;
   overflow: hidden;
+  margin-left: 50px; 
 }
 .enhanced-card:hover {
   transform: translateY(-8px) scale(1.025);
@@ -192,6 +193,9 @@ img {
   margin-bottom: 18px;
   letter-spacing: 0.5px;
   font-weight: 700;
+  margin-left: 100px;
+  height: 100px;
+  width: 200px;
 }
 .about-badge {
   display: inline-block;
@@ -250,8 +254,8 @@ img {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 36px 32px 32px 32px;
-  min-width: 320px;
-  max-width: 800px;
+  min-width: 420px;
+  max-width: 600px;
   margin: 40px auto 0 auto;
   transition: transform 0.25s, box-shadow 0.25s;
   position: relative;
