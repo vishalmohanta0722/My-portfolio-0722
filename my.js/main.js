@@ -147,6 +147,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.getElementById('hamburger').addEventListener('click', function() {
+  // Change the URL below to your desired page
+  window.location.href = 'menu.html';
+});
+document.getElementById('hamburger').addEventListener('click', function() {
+  window.open('menu.html', '_blank');
+});
 
 // about image section // 
 // ...existing code...
@@ -167,3 +174,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
