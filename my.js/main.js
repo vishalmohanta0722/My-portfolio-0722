@@ -175,3 +175,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+// ...existing code...
+
+// Hamburger menu toggle for mobile
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+
+  // Toggle navbar open/close on hamburger click
+  hamburger.addEventListener('click', function () {
+    navbar.classList.toggle('open');
+    hamburger.classList.toggle('is-active');
+  });
+
+  // Optional: Close navbar when a link is clicked (for single-page navigation)
+  navbar.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+      if (window.innerWidth <= 700) {
+        navbar.classList.remove('open');
+        hamburger.classList.remove('is-active');
+      }
+    });
+  });
+});
+
+// ...existing code...
