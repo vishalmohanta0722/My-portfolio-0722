@@ -4,85 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Vishal</title>
-  <meta name="description" content="Learn more about Vishal, a creative developer and problem solver." />
+  <meta name="description" content="About Vishal - Full Stack Developer Portfolio" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css/about.css" />
 </head>
 <body>
-  <div class="about-bg"></div>
   <main class="about-main">
-    <!-- Profile Card -->
-    <section class="profile-card animate-pop">
-      <div class="profile-img-wrap">
-        <img src="profile.jpg" alt="Vishal's Photo" class="profile-img" />
-      </div>
-      <div class="profile-info">
-        <h1>Vishal <span class="profile-badge">🚀</span></h1>
-        <p class="profile-role">Full-Stack Developer & UI/UX Enthusiast</p>
-        <p class="profile-location"><span>📍</span> India</p>
-      </div>
-    </section>
-
-    <!-- About Me Card -->
-    <section class="about-card animate-fadein">
-      <h2>About Me</h2>
-      <p>
-        Hi! I'm <span class="highlight">Vishal</span>, a passionate developer who loves building elegant, scalable, and user-friendly applications. My journey began with curiosity for how things work, and grew into a career focused on <span class="highlight">JavaScript</span>, <span class="highlight">React</span>, <span class="highlight">Node.js</span>, and creative UI/UX design.<br><br>
-        I thrive on solving real-world problems, collaborating with teams, and learning new technologies. When I'm not coding, you'll find me sketching, exploring new tech trends, or enjoying a good cup of coffee!
-      </p>
-    </section>
-
-    <!-- My Works Section -->
-    <section class="works-section animate-fadein">
-      <h2>My Works</h2>
-      <div class="works-grid">
-        <div class="work-card">
-          <span>🌐</span>
-          <h3>Modern Portfolio</h3>
-          <p>Responsive, animated portfolio site built with React & Tailwind CSS.</p>
+    <div class="about-img-section" id="aboutImgSection">
+      <label for="aboutImgUpload" class="about-upload-label">
+        <div class="about-img-glass">
+          <img src="about-profile.jpg" alt="About Vishal" class="about-profile-img" id="aboutProfileImg" />
+          <div class="about-img-overlay">
+            <span class="about-img-upload-icon">📷</span>
+          </div>
         </div>
-        <div class="work-card">
-          <span>📝</span>
-          <h3>Task Manager App</h3>
-          <p>Productivity app with real-time sync and drag-and-drop features.</p>
-        </div>
-        <div class="work-card">
-          <span>☁️</span>
-          <h3>Weather Dashboard</h3>
-          <p>Live weather dashboard using OpenWeatherMap API and PWA support.</p>
-        </div>
-      </div>
-    </section>
+        <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
+        <span class="about-upload-text">Change Photo</span>
+      </label>
+    </div>
+   
+  <section class="about-details-fancy" id="aboutDetailsFancy">
+  <span class="about-intro">Hi! I'm <b>Vishal</b>,</span>
+  <span class="about-role">a <b>full-stack developer</b> passionate about:</span>
+  <ul class="about-highlights">
+    <li>✨ Crafting <b>elegant</b>, <b>scalable</b>, and <b>user-focused</b> web applications</li>
+    <li>🚀 Specializing in <b>JavaScript</b>, <b>React</b>, <b>HTML</b>, <b>CSS</b>, <b>UI/UX Design</b>, and <b>Content Writing</b></li>
+    <li>💡 Fueled by a love for <b>learning</b>, <b>solving real-world problems</b>, and <b>collaborating</b> with creative minds</li>
+    <li>🌱 Always exploring new tech, writing insightful content, or sketching fresh design ideas</li>
+  </ul>
 
-    <!-- Skills Section -->
-    <section class="about-skills animate-fadein">
-      <h2>Skills & Tools</h2>
-      <div class="skills-grid">
-        <div class="skill-card" tabindex="0"><span>💻</span> JavaScript</div>
-        <div class="skill-card" tabindex="0"><span>⚛️</span> React.js</div>
-        <div class="skill-card" tabindex="0"><span>🌐</span> Node.js</div>
-        <div class="skill-card" tabindex="0"><span>🎨</span> UI/UX Design</div>
-        <div class="skill-card" tabindex="0"><span>🗄️</span> MongoDB</div>
-        <div class="skill-card" tabindex="0"><span>⚡</span> Express.js</div>
-        <div class="skill-card" tabindex="0"><span>🧩</span> REST APIs</div>
-        <div class="skill-card" tabindex="0"><span>🛠️</span> Git & GitHub</div>
-      </div>
-    </section>
-
-    <!-- Fun Facts -->
-    <section class="about-fun animate-fadein">
-      <h2>Fun Facts</h2>
-      <ul>
-        <li>🎵 I code best with music on.</li>
-        <li>☕ Coffee fuels my creativity.</li>
-        <li>🖌️ I love sketching UI ideas on paper first.</li>
-        <li>🌱 Always learning something new!</li>
-      </ul>
-    </section>
+    <div class="about-skills-row" id="aboutSkillsRow">
+      <div class="about-skill"><span>💻</span><span>JavaScript</span></div>
+      <div class="about-skill"><span>⚛️</span><span>React</span></div>
+      <div class="about-skill"><span>🔤</span><span>HTML</span></div>
+      <div class="about-skill"><span>🎨</span><span>CSS</span></div>
+      <div class="about-skill"><span>🖌️</span><span>Design</span></div>
+      <div class="about-skill"><span>✍️</span><span>Content Writing</span></div>
+    </div>
   </main>
-  <footer class="about-footer">
-    &copy; 2025 Vishal. Crafted with <span class="highlight">creativity</span>.
-  </footer>
-  <script src="./main.js/about.js"></script>
+  <script src="./my.js/about.js"></script>
 </body>
-</html
+</html>

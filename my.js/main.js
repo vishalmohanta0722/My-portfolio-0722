@@ -147,3 +147,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// about image section // 
+// ...existing code...
+document.addEventListener("DOMContentLoaded", function () {
+  // About image upload preview
+  const aboutImgUpload = document.getElementById('aboutImgUpload');
+  const aboutProfileImg = document.getElementById('aboutProfileImg');
+  if (aboutImgUpload && aboutProfileImg) {
+    aboutImgUpload.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (evt) {
+          aboutProfileImg.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+});

@@ -15,14 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <!-- Animate.css CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="./stylesheet/style.css" />
+    <link rel="stylesheet" href="./style.css/stylesheet.css" />
+
 </head>
 <body>
 <!-- Place this at the top of your <body> -->
 <header class="main-header">
     <div class="logo">
         <a href="./index.html" aria-label="Vishal Home">
-            <img src="profile.jpg" alt="Vishal Logo" class="logo-img" />
+            <img src="./image.jpeg/Green and White Photo Grid Web Design Services Instagram Post.png" alt="Vishal Logo" class="logo-img" />
             <span class="logo-text">Vishal<span class="logo-dot">.</span></span>
         </a>
     </div>
@@ -47,15 +48,17 @@
 <section class="hero-section">
     <div class="hero-bg-animated"></div>
     <div class="hero-container">
-        <div class="hero-profile-float">
-            <img src="profile.jpg" alt="Vishal's Photo" class="hero-profile-img" />
-        </div>
+       
+            
+            <img src="./image.jpeg/port.jpeg" alt="Vishal's Photo" class="hero-profile-img" />
+
         <div class="hero-glass-card animate__animated animate__fadeInDown">
             <h1>Hi, I'm <span class="highlight">Vishal</span> <span class="wave">👋</span></h1>
             <p class="hero-desc">A passionate developer crafting <span class="gradient-text">elegant</span> solutions with modern web technologies.</p>
             <div class="hero-quote" id="heroQuote">
                 "Code is like humor. When you have to explain it, it’s bad."
             </div>
+            
             <a href="#projects" class="btn-primary hero-btn">View My Work</a>
         </div>
     </div>
@@ -67,6 +70,14 @@
         <span class="about-view-label">👁️ View about me</span>
         <h2 class="section-title">Know About Me</h2>
     </div>
+    <!-- About Image Section -->
+<div class="about-image-section" id="aboutImageSection">
+    <label for="aboutImgUpload" class="about-img-upload-label">
+        <img src="./image.jpeg/Green and White Photo Grid Web Design Services Instagram Post.png" alt="About Vishal" class="about-profile-img" id="aboutProfileImg" />
+        <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
+        <span class="about-img-upload-text">Change Photo</span>
+    </label>
+</div>
     <div class="about-cards-wrap">
         <div class="about-card-glass animate__animated animate__fadeInLeft">
             <h3 class="about-card-title">Who am I?</h3>
@@ -182,12 +193,7 @@
         </form>
     </section>
 
-    <footer>
-          <!-- ...existing code... -->
-
-    <!-- Footer -->
-        <!-- ...existing code... -->
-
+  
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-bg"></div>
