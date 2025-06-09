@@ -108,7 +108,7 @@ ul {
 /* === HERO SECTION === */
 .hero-section {
   position: relative;
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -688,6 +688,7 @@ ul {
   }
   .hamburger {
     display: flex;
+    height: 100px;
   }
   .hero-section {
     padding: 24px 0 0 0;
@@ -805,4 +806,71 @@ ul {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px);}
   to { opacity: 1; transform: translateY(0);}
+}
+
+/* ...existing code... */
+
+/* Hamburger styles */
+/* ...existing code... */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 18px;
+  z-index: 30;
+  width: 40px;
+  height: 60px; /* Increased height for easier tapping */
+  justify-content: center;
+  align-items: center;
+}
+/* ...existing code... */
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #6366f1;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 12px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 16px #6366f122;
+    z-index: 20;
+  }
+  .navbar.open ul {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .main-header {
+    position: relative;
+    flex-direction: row;
+    min-height: 70px;
+    padding: 0 2vw;
+  }
 }

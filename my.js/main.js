@@ -41,25 +41,6 @@ document.querySelector('.main-footer').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// header,navbar and hamburger menu
-
-// Hamburger menu functionality
-const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navbar.classList.toggle('open');
-});
-
-// Close navbar on link click (mobile)
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if(window.innerWidth <= 700) {
-            hamburger.classList.remove('active');
-            navbar.classList.remove('open');
-        }
-    });
-});
 
 // changes in hero section profile image on hover
 // Rotating hero quotes
@@ -113,47 +94,6 @@ document.querySelectorAll('.project-flip-card').forEach(card => {
     });
 });
 
-// Hamburger menu toggle for mobile navigation
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  // Toggle navbar open/close
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navbar.classList.toggle("open");
-  });
-
-  // Close navbar when a link is clicked (mobile UX)
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      if (navbar.classList.contains("open")) {
-        navbar.classList.remove("open");
-        hamburger.classList.remove("active");
-      }
-    });
-  });
-
-  // Optional: Close navbar on outside click
-  document.addEventListener("click", function (e) {
-    if (
-      navbar.classList.contains("open") &&
-      !navbar.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      navbar.classList.remove("open");
-      hamburger.classList.remove("active");
-    }
-  });
-});
-document.getElementById('hamburger').addEventListener('click', function() {
-  // Change the URL below to your desired page
-  window.location.href = 'menu.html';
-});
-document.getElementById('hamburger').addEventListener('click', function() {
-  window.open('menu.html', '_blank');
-});
 
 // about image section // 
 // ...existing code...
@@ -175,10 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-// ...existing code...
-
-// Hamburger menu toggle for mobile
+// Hamburger menu toggle for mobile/tablet
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.getElementById('hamburger');
   const navbar = document.getElementById('navbar');
@@ -189,15 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.classList.toggle('is-active');
   });
 
-  // Optional: Close navbar when a link is clicked (for single-page navigation)
+  // Optional: Close navbar when a link is clicked (on mobile)
   navbar.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function () {
-      if (window.innerWidth <= 700) {
+      if (window.innerWidth <= 900) {
         navbar.classList.remove('open');
         hamburger.classList.remove('is-active');
       }
     });
   });
-});
 
-// ...existing code...
+  // Optional: Close navbar if window is resized to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) {
+      navbar.classList.remove('open');
+      hamburger.classList.remove('is-active');
+    }
+  });
+});
