@@ -76,3 +76,36 @@ function revealExperienceQuote() {
 }
 window.addEventListener('scroll', revealExperienceQuote);
 window.addEventListener('DOMContentLoaded', revealExperienceQuote);
+
+// hamburger menu toggle
+
+
+// Hamburger menu toggle for mobile/tablet
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+
+  // Toggle navbar open/close on hamburger click
+  hamburger.addEventListener('click', function () {
+    navbar.classList.toggle('open');
+    hamburger.classList.toggle('is-active');
+  });
+
+  // Optional: Close navbar when a link is clicked (on mobile)
+  navbar.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+      if (window.innerWidth <= 900) {
+        navbar.classList.remove('open');
+        hamburger.classList.remove('is-active');
+      }
+    });
+  });
+
+  // Optional: Close navbar if window is resized to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) {
+      navbar.classList.remove('open');
+      hamburger.classList.remove('is-active');
+    }
+  });
+});

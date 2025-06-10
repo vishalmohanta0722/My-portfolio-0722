@@ -112,13 +112,13 @@ img {
   margin-bottom: 24px;
 }
 .about-view-label {
-  font-size: 1rem;
-  color: #6366f1;
+  font-size: rem;
+  color: #0a0ee3;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 .section-title {
-  font-size: 2rem;
+  font-size: 0.5rem;
   font-family: 'Poppins', sans-serif;
   color: #232946;
   margin: 8px 0 0 0;
