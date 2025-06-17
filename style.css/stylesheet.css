@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', 'Poppins', Arial, sans-serif;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 60%, #6366f1 100%);
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #232946;
   min-height: 100vh;
   line-height: 1.6;
@@ -142,8 +142,13 @@ ul {
   border: 5px solid #fff;
   margin-bottom: 18px;
 }
+.hero-profile-img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 .hero-glass-card {
-  background: rgba(255,255,255,0.85);
+  background: linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(251,191,36,0.13) 100%);
   border-radius: 22px;
   box-shadow: 0 8px 32px 0 rgba(99,102,241,0.13);
   padding: 36px 32px;
@@ -155,11 +160,11 @@ ul {
 .hero-glass-card h1 {
   font-size: 2.2rem;
   font-family: 'Poppins', sans-serif;
-  color: #232946;
+  color: burlywood;
   margin-bottom: 10px;
 }
 .hero-glass-card .highlight {
-  color: #6366f1;
+  color: #027c83;
   font-weight: 700;
 }
 .wave {
@@ -176,13 +181,13 @@ ul {
   50% { transform: rotate(10deg);}
 }
 .hero-desc {
-  color: #374151;
+  color: rgba(0, 0, 0, 0.767);
   font-size: 1.15rem;
   margin-bottom: 18px;
 }
 .hero-quote {
   font-style: italic;
-  color: #6366f1;
+  color: #07b8ee;
   background: #e0e7ff;
   border-radius: 10px;
   padding: 10px 16px;
@@ -192,7 +197,8 @@ ul {
 }
 .btn-primary, .hero-btn {
   display: inline-block;
-  background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+background: linear-gradient(135deg, #0582a5, #acb6e5e1);
+
   color: #fff;
   font-weight: 700;
   font-size: 1.08rem;
@@ -237,9 +243,14 @@ ul {
   margin-bottom: 24px;
 }
 .about-profile-img {
-  width: 420px;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.about-profile-img {
+  width: 620px;
   height: 420px;
-  border-radius: 50%;
+
   object-fit: cover;
   border: 4px solid #6366f1;
   box-shadow: 0 2px 16px #6366f122;
@@ -673,7 +684,7 @@ ul {
   .navbar ul {
     flex-direction: column;
     gap: 8px;
-    background: #fff;
+    background: linear-gradient(greenyellow);
     position: absolute;
     top: 60px;
     left: 0;
