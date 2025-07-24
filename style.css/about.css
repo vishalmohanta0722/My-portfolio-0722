@@ -627,3 +627,65 @@ img {
     padding: 8px 1vw 4px 1vw;
   }
 }
+
+/* Glass Cards for HTML, CSS, JS Descriptions */
+.tech-glass-cards-section {
+  margin: 3rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.tech-glass-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-glass-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  width: 270px;
+  min-height: 230px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.tech-glass-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 40px 0 rgba(31,38,135,0.22);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+
+.tech-glass-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+.tech-glass-card p {
+  font-size: 1rem;
+  color: #222;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Optional: Different accent for each card */
+.html-card { border-left: 4px solid #e44d26; }
+.css-card { border-left: 4px solid #2965f1; }
+.js-card { border-left: 4px solid #f7df1e; }

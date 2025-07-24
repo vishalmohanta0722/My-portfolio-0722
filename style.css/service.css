@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Poppins', Arial, sans-serif;
-  background:linear-gradient(rgba(1, 14, 24, 0.635))rgba(0, 0, 0, 0.573);
+  background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #232946;
   min-height: 100vh;
   line-height: 1.6;
@@ -257,5 +257,76 @@ body {
   .services-cta-section {
     padding-left: 2vw;
     padding-right: 2vw;
+  }
+}
+/* Remove glass box styles and make image section larger */
+.service-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0 2rem 0;
+  width: 100%;
+}
+
+.service-main-img-large {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+  background: #fff;
+  transition: transform 0.3s;
+}
+.service-main-img-large:hover {
+  transform: scale(1.04) rotate(-2deg);
+}
+
+.service-quote-large {
+  font-size: 1.35rem;
+  color: #1a1a1a;
+  opacity: 0.92;
+  font-style: italic;
+  margin: 0;
+  margin-top: 0.7rem;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.service-quote-large:before,
+.service-quote-large:after {
+  color: #4ecca3;
+  font-size: 2.2rem;
+  opacity: 0.7;
+  font-family: serif;
+  vertical-align: middle;
+}
+
+.service-quote-large:before {
+  content: "“";
+  margin-right: 0.2rem;
+}
+
+.service-quote-large:after {
+  content: "”";
+  margin-left: 0.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .service-main-img-large {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+  .service-quote-large {
+    font-size: 1rem;
+    padding: 0 0.2rem;
+    max-width: 98vw;
   }
 }

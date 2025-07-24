@@ -109,3 +109,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+// ...existing code...
+
+// Animate glass cards on scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.tech-glass-card');
+  const revealCards = () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        card.classList.add('tech-glass-card-visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealCards);
+  revealCards();
+});
+
+// Add this CSS to about.css for fade-in effect
+/*
+.tech-glass-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+}
+.tech-glass-card.tech-glass-card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+*/

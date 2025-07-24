@@ -144,3 +144,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+//services section//
+// Fade-in animation for home service cards
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.home-service-card');
+  const revealCards = () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        card.classList.add('visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealCards);
+  revealCards();
+});

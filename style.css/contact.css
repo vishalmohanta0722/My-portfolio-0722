@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', 'Poppins', Arial, sans-serif;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 60%, #6366f1 100%);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #232946;
   min-height: 100vh;
   line-height: 1.6;

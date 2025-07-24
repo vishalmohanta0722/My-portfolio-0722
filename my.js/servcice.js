@@ -38,3 +38,21 @@ document.addEventListener('DOMContentLoaded', function () {
   );
   cards.forEach(card => observer.observe(card));
 });
+
+// ...existing code...
+
+// Fade-in animation for service image section
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceGlass = document.querySelector('.service-image-glass');
+  if (serviceGlass) {
+    const reveal = () => {
+      const rect = serviceGlass.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        serviceGlass.classList.add('visible');
+        window.removeEventListener('scroll', reveal);
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  }
+});
