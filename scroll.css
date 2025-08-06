@@ -1,0 +1,107 @@
+/* Custom Scrollbar Styles */
+:root {
+  --scrollbar-primary: #6366f1;
+  --scrollbar-secondary: #fbbf24;
+  --scrollbar-bg: rgba(255, 255, 255, 0.1);
+  --scrollbar-width: 12px;
+  --progress-height: 4px;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--progress-height);
+  background: var(--scrollbar-bg);
+  z-index: 1000;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--scrollbar-primary), var(--scrollbar-secondary));
+  transition: width 0.2s ease;
+}
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  backdrop-filter: blur(8px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-primary),
+    var(--scrollbar-secondary)
+  );
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-secondary),
+    var(--scrollbar-primary)
+  );
+  background-clip: content-box;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-primary) var(--scrollbar-bg);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-bg: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  :root {
+    --scrollbar-width: 8px;
+    --progress-height: 3px;
+  }
+}
+
+/* Hide on Print */
+@media print {
+  .scroll-progress-container {
+    display: none;
+  }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fallback for browsers that don't support custom scrollbars */
+@supports not (scrollbar-width: thin) {
+  ::-webkit-scrollbar {
+    width: auto;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border: none;
+  }
+}

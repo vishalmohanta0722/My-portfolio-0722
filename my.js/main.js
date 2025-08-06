@@ -1,39 +1,46 @@
 // Contact form validation and feedback
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    let valid = true;
-
-    // Remove previous error styles
-    [name, email, message].forEach(input => {
-        input.style.borderColor = '#e5e7eb';
-    });
-
-    // Simple validation
-    [name, email, message].forEach(input => {
-        if (!input.value.trim()) {
-            input.style.borderColor = '#ef4444';
-            valid = false;
-        }
-    });
-
-    // Email format check
-    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    if (!emailPattern.test(email.value)) {
-        email.style.borderColor = '#ef4444';
-        valid = false;
-    }
-
-    if (valid) {
-        document.getElementById('formMsg').style.display = 'block';
-        this.reset();
-        setTimeout(() => {
-            document.getElementById('formMsg').style.display = 'none';
-        }, 3000);
-    }
+// Fade-in animation for contact logo hero section
+document.addEventListener('DOMContentLoaded', function() {
+  const logoHero = document.querySelector('.contact-logo-hero');
+  if (logoHero) {
+    logoHero.style.opacity = 0;
+    logoHero.style.transform = 'translateY(-30px)';
+    setTimeout(() => {
+      logoHero.style.transition = 'opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1)';
+      logoHero.style.opacity = 1;
+      logoHero.style.transform = 'translateY(0)';
+    }, 200);
+  }
 });
+
+    // Fade-in animation for contact cards
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.contact-card');
+  const revealCards = () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        card.classList.add('visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealCards);
+  revealCards();
+});
+
+// Add this to your CSS for fade-in effect:
+/*
+.contact-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+}
+.contact-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+*/
+
 // footer section
 
 // Footer animation (optional: scroll to top on click)
