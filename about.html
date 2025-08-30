@@ -8,9 +8,18 @@
   <link rel="stylesheet" href="./style.css/about.css" />
   <link rel="stylesheet" href="./style.css/stylesheet.css" />
   <link rel="stylesheet" href="./style.css/footer&navbar.css" />
+  <link rel="stylesheet" href="./scroll.css" />
   
 </head>
 <body>
+  <body>
+    <div class="scroll-progress"></div>
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+    // ...existing code...
 <!-- Place this at the top of your <body> -->
 <header class="main-header">
     <div class="logo">
@@ -36,22 +45,20 @@
         <span></span>
     </button>
 </header>
-
+<!-- About Me -->
 <section id="about" class="about-section">
     <div class="about-header-row">
         <span class="about-view-label">👁️ View about me</span>
-        <h2 class="section-title">Know About Me</h2>
+
     </div>
-    
-    <div class="about-intro-container">
-        <!-- About Image Section -->
-        <div class="about-image-section" id="aboutImageSection">
-            <label for="aboutImgUpload" class="about-img-upload-label">
-                <img src="./image.jpeg/AdobeStock_1166587468_Preview-removebg-preview.png" alt="About Vishal" class="about-profile-img" id="aboutProfileImg" />
-                <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
-                <span class="about-img-upload-text">Change Photo</span>
-            </label>
-        </div>
+    <!-- About Image Section -->
+<section class="about-image-section" id="aboutImageSection">
+    <label for="aboutImgUpload" class="about-img-upload-label">
+        <img src="./image.jpeg/AdobeStock_1166587468_Preview-removebg-preview.png" alt="About Vishal" class="about-profile-img" id="aboutProfileImg" />
+        <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
+        <span class="about-img-upload-text">Change Photo</span>
+    </label>
+
 
         <!-- About Intro Section -->
         <div class="about-intro">
@@ -59,7 +66,7 @@
                 <span class="intro-subtitle">Full Stack Developer</span>
                 <h1 class="intro-name">
                     <span class="greeting">Hello, I'm</span>
-                    <span class="name">Vishal</span>
+                    <span class="name">Vishal </span>
                 </h1>
                 <p class="intro-bio">
                     Building <span class="highlight">digital experiences</span> with 
@@ -75,8 +82,9 @@
         </div>
     </div>
     
-    <!-- ...rest of your content... -->
 </section>
+
+
   <div class="about-cards-wrap">
   <!-- Who am I Card -->
   <div class="about-card-glass enhanced-card animate__animated animate__fadeInLeft">
@@ -88,8 +96,11 @@
       <span class="about-badge">React Specialist</span>
       <span class="about-badge">UI/UX Lover</span>
       <br><br>
-      I love <span class="highlight-work">solving real-world problems</span>, <span class="highlight-work">collaborating with teams</span>, and always <span class="highlight-work">learning something new</span>!
+      <span class="highlight-work">I love solving real-world problems</span>, <span class="highlight-work">collaborating with teams and always</span><span class="highlight-work">learning something new!</span>
     </p>
+    <P>
+      <h3> <span class="highlight-Trust">Trust us !! We make a work easier and simple to you</span></h3>
+    </P>
   </div>
   <!-- Skills Card -->
   <div class="about-experience-glass enhanced-card animate__animated animate__fadeInRight">
@@ -115,7 +126,7 @@
 </div>
  <!-- Skill Card Start -->
 <section class="skill-card-section">
-  <h3 class="skill-card-title">My Core Skills</h3>
+  <h3 class="skill-card-title">I am skilled in this </h3>
   <div class="skill-card-grid">
     <div class="skill-item">
       <div class="skill-icon html">🔤</div>
@@ -176,7 +187,12 @@
   </div>
 </section>
 <!-- Skill Card End -->
-
+<div class="skills-header">
+    <h2 class="skills-title">
+        <span class="skills-title-text">My Core Skills</span>
+        <div class="skills-title-decoration"></div>
+    </h2>
+</div>
 <!-- ...existing code... -->
 <section class="tech-glass-cards-section">
   <div class="tech-glass-cards">
@@ -231,6 +247,7 @@
     </footer>
 
   <script src="./my.js/about.js"></script>
+    <script src="./scroll.js"></script>
 
 </body>
 </html>
