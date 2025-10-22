@@ -1,107 +1,114 @@
-/* Custom Scrollbar Styles */
-:root {
-  --scrollbar-primary: #6366f1;
-  --scrollbar-secondary: #fbbf24;
-  --scrollbar-bg: rgba(255, 255, 255, 0.1);
-  --scrollbar-width: 12px;
-  --progress-height: 4px;
-}
-
 /* Scroll Progress Bar */
-.scroll-progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--progress-height);
-  background: var(--scrollbar-bg);
-  z-index: 1000;
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(to right, #6366f1, #fbbf24);
+    z-index: 1000;
+    transition: width 0.2s ease;
 }
 
-.scroll-progress-bar {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--scrollbar-primary), var(--scrollbar-secondary));
-  transition: width 0.2s ease;
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Webkit Scrollbar */
+.scroll-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top-btn svg {
+    fill: white;
+    transition: transform 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(99, 102, 241, 1);
+    transform: translateY(-5px);
+}
+
+.scroll-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: var(--scrollbar-width);
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-bg);
-  backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    var(--scrollbar-primary),
-    var(--scrollbar-secondary)
-  );
-  border-radius: 6px;
-  border: 3px solid transparent;
-  background-clip: content-box;
-  transition: all 0.3s ease;
+    background: linear-gradient(45deg, #6366f1, #fbbf24);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    var(--scrollbar-secondary),
-    var(--scrollbar-primary)
-  );
-  background-clip: content-box;
+    background: linear-gradient(45deg, #fbbf24, #6366f1);
+    background-clip: content-box;
 }
 
-/* Firefox Scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-primary) var(--scrollbar-bg);
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --scrollbar-bg: rgba(0, 0, 0, 0.2);
-  }
-}
-
-/* Mobile Optimization */
+/* Responsive Design */
 @media (max-width: 768px) {
-  :root {
-    --scrollbar-width: 8px;
-    --progress-height: 3px;
-  }
+    .scroll-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .scroll-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scroll-progress {
+        height: 3px;
+    }
 }
 
-/* Hide on Print */
+@media (max-width: 480px) {
+    .scroll-top-btn {
+        width: 35px;
+        height: 35px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Print styles */
 @media print {
-  .scroll-progress-container {
-    display: none;
-  }
-}
-
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Fallback for browsers that don't support custom scrollbars */
-@supports not (scrollbar-width: thin) {
-  ::-webkit-scrollbar {
-    width: auto;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 0;
-    border: none;
-  }
+    .scroll-top-btn,
+    .scroll-progress {
+        display: none;
+    }
 }

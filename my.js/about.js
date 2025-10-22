@@ -190,43 +190,46 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(item);
   });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Animate intro content on load
-    const introContent = document.querySelector('.intro-content');
-    if (introContent) {
-        setTimeout(() => {
-            introContent.style.opacity = '1';
-            introContent.style.transform = 'translateY(0)';
-        }, 300);
-    }
-
-    // Animate tags with delay
-    const tags = document.querySelectorAll('.tag');
-    tags.forEach((tag, index) => {
-        tag.style.opacity = '0';
-        tag.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            tag.style.opacity = '1';
-            tag.style.transform = 'translateY(0)';
-            tag.style.transition = 'all 0.5s ease';
-        }, 500 + (index * 100));
+    const skillsTitle = document.querySelector('.skills-title');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                // Add hover effect after animation
+                setTimeout(() => {
+                    entry.target.addEventListener('mousemove', handleTitleHover);
+                    entry.target.addEventListener('mouseleave', resetTitleEffect);
+                }, 1000);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
     });
 
-    // Optional: Add hover effect for the image
-    const profileImg = document.querySelector('.about-profile-img');
-    if (profileImg) {
-        profileImg.addEventListener('mousemove', function(e) {
-            const { left, top, width, height } = this.getBoundingClientRect();
-            const x = (e.clientX - left) / width - 0.5;
-            const y = (e.clientY - top) / height - 0.5;
-            
-            this.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
-        });
+    if (skillsTitle) {
+        observer.observe(skillsTitle);
+    }
 
-        profileImg.addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
-        });
+    function handleTitleHover(e) {
+        const title = this;
+        const { left, top, width, height } = title.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+        
+        title.style.transform = `
+            perspective(1000px)
+            rotateY(${x * 5}deg)
+            rotateX(${y * -5}deg)
+        `;
+    }
+
+    function resetTitleEffect() {
+        this.style.transform = 'none';
     }
 });

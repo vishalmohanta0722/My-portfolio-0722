@@ -250,7 +250,7 @@ background: linear-gradient(135deg, #0582a5, #acb6e5e1);
 .about-profile-img {
   width: 620px;
   height: 420px;
-
+margin-left: 100px;
   object-fit: cover;
   border: 4px solid #6366f1;
   box-shadow: 0 2px 16px #6366f122;
@@ -1160,4 +1160,167 @@ color: red;
   .home-service-card {
     padding: 1.2rem 0.7rem 1rem 0.7rem;
   }
+}
+
+
+.about-image-section {
+    flex: 0 0 400px;
+    position: relative;
+}
+
+.about-intro {
+    flex: 1;
+}
+
+.intro-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.intro-subtitle {
+    color: #6366f1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 7rem;
+}
+
+.intro-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    color: rgb(236, 134, 0);
+    font-weight: 500;
+}
+
+.name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #9d9ee4 0%, #bd6207e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+}
+
+.intro-bio {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: whitesmoke;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.highlight {
+    color: #6366f1;
+    font-weight: 600;
+}
+
+.tech {
+    background: rgba(99,102,241,0.1);
+   
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tech:hover {
+    background: rgba(99,102,241,0.2);
+    transform: translateY(-2px);
+}
+
+.intro-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(99,102,241,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+  background:  linear-gradient(135deg, #0582a5, #acb6e5e1);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+     background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-intro-container {
+        gap: 2rem;
+    }
+
+    .about-image-section {
+        flex: 0 0 350px;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-intro-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image-section {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .intro-tags {
+        justify-content: center;
+    }
+
+    .intro-bio {
+        margin: 1.5rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-intro-container {
+        padding: 0 1rem;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .intro-bio {
+        font-size: 1.1rem;
+    }
+
+    .tag {
+        font-size: 0.9rem;
+    }
 }
