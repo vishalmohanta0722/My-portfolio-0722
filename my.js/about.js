@@ -233,3 +233,43 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'none';
     }
 });
+// new sewrvice html js //
+// ===== NAVBAR TOGGLE =====
+const hamburger = document.getElementById("hamburger");
+const navbar = document.getElementById("navbar");
+
+hamburger.addEventListener("click", () => {
+  navbar.classList.toggle("open");
+  hamburger.classList.toggle("is-active");
+});
+
+// ===== REVEAL SERVICE CARDS ON SCROLL =====
+const serviceCards = document.querySelectorAll(".service-card");
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  serviceCards.forEach((card) => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < triggerBottom) {
+      card.classList.add("visible");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+// ===== SMOOTH SCROLL FOR HERO BUTTON =====
+const heroBtn = document.querySelector(".hero-btn");
+if (heroBtn) {
+  heroBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(heroBtn.getAttribute("href"));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  });
+}

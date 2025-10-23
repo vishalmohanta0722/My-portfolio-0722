@@ -35,7 +35,7 @@
             <li><a href="./projects.html" class="nav-link">Projects</a></li>
             <li><a href="#resume" class="nav-link">Resume</a></li>
             <li><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li><a href="./blog.html" class="nav-link">Blog</a></li>
+          
             <li><a href="./services.html" class="nav-link">Services</a></li>
         </ul>
     </nav>
@@ -45,22 +45,13 @@
         <span></span>
     </button>
 </header>
-<!-- About Me -->
 <section id="about" class="about-section">
     <div class="about-header-row">
         <span class="about-view-label">👁️ View about me</span>
-
     </div>
-    <!-- About Image Section -->
-<section class="about-image-section" id="aboutImageSection">
-    <label for="aboutImgUpload" class="about-img-upload-label">
-        <img src="./image.jpeg/AdobeStock_1166587468_Preview-removebg-preview.png" alt="About Vishal" class="about-profile-img" id="aboutProfileImg" />
-        <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
-        <span class="about-img-upload-text">Change Photo</span>
-    </label>
 
-
-        <!-- About Intro Section -->
+    <section class="about-content-wrapper">
+        <!-- About Intro Section (Now Left) -->
         <div class="about-intro">
             <div class="intro-content">
                 <span class="intro-subtitle">Full Stack Developer</span>
@@ -80,10 +71,20 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-</section>
 
+        <!-- About Image Section (Now Right) -->
+        <div class="about-image-section" id="aboutImageSection">
+            <label for="aboutImgUpload" class="about-img-upload-label">
+                <img src="./image.jpeg/AdobeStock_1166587468_Preview-removebg-preview.png" 
+                     alt="About Vishal" 
+                     class="about-profile-img" 
+                     id="aboutProfileImg" />
+                <input type="file" id="aboutImgUpload" accept="image/*" style="display:none;">
+                <span class="about-img-upload-text">Change Photo</span>
+            </label>
+        </div>
+    </section>
+</section>
 
   <div class="about-cards-wrap">
   <!-- Who am I Card -->
@@ -217,6 +218,14 @@
         JavaScript adds life to your site. It powers interactivity, dynamic content, and seamless user experiences across the web.
       </p>
     </div>
+    <div class="tech-glass-card react-card">
+  <div class="tech-icon">⚛️</div>
+  <h4>React</h4>
+  <p>
+    React empowers modern interfaces with reusable components, virtual DOM efficiency, and seamless user experiences for dynamic web apps.
+  </p>
+</div>
+
   </div>
 </section>
 <!-- ...existing code... -->

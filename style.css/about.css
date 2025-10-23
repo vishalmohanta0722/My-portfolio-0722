@@ -433,6 +433,18 @@ background: linear-gradient(135deg, #0582a5, #acb6e5e1);
   transition: width 1.2s cubic-bezier(.77,0,.18,1);
   box-shadow: 0 2px 8px #6366f122;
 }
+/* react cards hover */
+.react-card {
+  background: linear-gradient(135deg, rgba(97, 218, 251, 0.18), rgba(99,102,241,0.12));
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(97, 218, 251, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.react-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(97, 218, 251, 0.35);
+}
 
 /* === FOOTER === */
 .main-footer {

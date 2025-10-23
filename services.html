@@ -4,11 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | Vishal</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css/stylesheet.css" />
+
   <link rel="stylesheet" href="./style.css/service.css" />
-  <link rel="stylesheet" href="./style.css/footer&navbar.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+  <!-- Header -->
   <header class="main-header">
     <div class="logo">
       <a href="./index.html" aria-label="Vishal Home">
@@ -18,13 +25,13 @@
     </div>
     <nav class="navbar" id="navbar">
       <ul>
-         <li><a href="./index.html" class="nav-link">Home</a></li>
-            <li><a href="./about.html" class="nav-link">About</a></li>
-            <li><a href="./project" class="nav-link">Projects</a></li>
-            <li><a href="#resume" class="nav-link">Resume</a></li>
-            <li><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li><a href="./blog.html" class="nav-link">Blog</a></li>
-            <li><a href="./services.html" class="nav-link active">Services</a></li>
+        <li><a href="./index.html" class="nav-link">Home</a></li>
+        <li><a href="./about.html" class="nav-link">About</a></li>
+        <li><a href="./project.html" class="nav-link">Projects</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="./contact.html" class="nav-link">Contact</a></li>
+
+        <li><a href="./services.html" class="nav-link active">Services</a></li>
       </ul>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open navigation">
@@ -33,87 +40,192 @@
       <span></span>
     </button>
   </header>
-<!-- ...existing code... -->
-<section class="service-image-section">
-  <img src="./Green and White Modern Computer Service Repair Logo.png" alt="Web Services" class="service-main-img-large" />
-  <blockquote class="service-quote-large">
-    “Great service is not just about code, but about creating digital experiences that inspire.”
-  </blockquote>
-</section>
-<!-- ...existing code... -->
-  <main>
-    <section class="services-hero">
-      <h1 class="services-title">What I Offer</h1>
-      <p class="services-intro">
-        I provide a range of web development services to help you build, launch, and grow your online presence with style and performance.
-      </p>
-    </section>
 
-    <section class="services-grid-section">
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">💻</div>
-          <h3 class="service-title">Web Development</h3>
-          <p class="service-desc">Custom, responsive websites built for performance and scalability using modern technologies.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3 class="service-title">UI/UX Design</h3>
-          <p class="service-desc">Intuitive, beautiful interfaces focused on user experience and engagement.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚛️</div>
-          <h3 class="service-title">Frontend Development</h3>
-          <p class="service-desc">Interactive, dynamic frontends with React, Vue, or vanilla JavaScript.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔗</div>
-          <h3 class="service-title">Backend Integration</h3>
-          <p class="service-desc">Robust APIs and seamless backend integration using Node.js, Express, and databases.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🚀</div>
-          <h3 class="service-title">SEO Optimization</h3>
-          <p class="service-desc">Improve your site's visibility and ranking with best SEO practices and performance tuning.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3 class="service-title">Website Maintenance</h3>
-          <p class="service-desc">Ongoing support, updates, and security to keep your website running smoothly.</p>
+  <!-- Hero Section -->
+  <section class="services-hero" id="parallax-hero">
+    <div class="hero-overlay"></div>
+    <div class="gradient-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Building Digital Experiences That Inspire</h1>
+      <p class="hero-subtitle">Crafting impactful web solutions that merge creativity, design, and performance.</p>
+      <a href="#service-details" class="hero-btn">Explore My Services ↓</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+ <!-- Services Section -->
+<section id="service-details" class="home-services-section">
+  <div class="home-services-header">
+    <div class="service-label">
+      <span class="service-emoji">🛠️</span>
+      <span class="label-text">What I Can Do</span>
+    </div>
+    <h2 class="section-title">All <span class="gradient-text">Professional Services</span></h2>
+    <p class="services-intro">From UI/UX to deployment — I offer end-to-end solutions to help you build fast, scalable, and stunning web apps.</p>
+  </div>
+
+  <div class="services-grid">
+    <!-- UI/UX Design -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">🎨</span></div>
+        <h3 class="service-title">UI/UX Design</h3>
+        <p class="service-desc">Designing engaging user interfaces with intuitive experiences that convert visitors into loyal users.</p>
+        <ul class="service-features">
+          <li>✓ Wireframing & Prototyping</li>
+          <li>✓ Figma & Adobe XD Expertise</li>
+          <li>✓ User-Centered Design</li>
+          <li>✓ Responsive Design Systems</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Frontend Development -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">⚛️</span></div>
+        <h3 class="service-title">Frontend Development</h3>
+        <p class="service-desc">Creating fast, interactive, and scalable frontends using modern JavaScript frameworks and best practices.</p>
+        <ul class="service-features">
+          <li>✓ React, Next.js, Vue</li>
+          <li>✓ TailwindCSS, SCSS</li>
+          <li>✓ Animations with Framer Motion</li>
+          <li>✓ Progressive Web Apps</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Backend Development -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">🔗</span></div>
+        <h3 class="service-title">Backend Integration</h3>
+        <p class="service-desc">Building powerful backend systems and APIs that handle business logic and data efficiently.</p>
+        <ul class="service-features">
+          <li>✓ Node.js, Express</li>
+          <li>✓ RESTful & GraphQL APIs</li>
+          <li>✓ MongoDB, MySQL</li>
+          <li>✓ Secure Authentication</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- SEO Optimization -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">🚀</span></div>
+        <h3 class="service-title">SEO Optimization</h3>
+        <p class="service-desc">Boosting your online visibility with search-friendly architecture and speed optimization techniques.</p>
+        <ul class="service-features">
+          <li>✓ On-page SEO Setup</li>
+          <li>✓ Website Performance Audit</li>
+          <li>✓ Structured Data Markup</li>
+          <li>✓ Core Web Vitals Optimization</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- DevOps & Deployment -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">⚙️</span></div>
+        <h3 class="service-title">DevOps & Deployment</h3>
+        <p class="service-desc">Automating deployments and managing cloud infrastructure for scalable and reliable applications.</p>
+        <ul class="service-features">
+          <li>✓ CI/CD Pipelines</li>
+          <li>✓ AWS, Azure, & GCP</li>
+          <li>✓ Docker & Kubernetes</li>
+          <li>✓ Monitoring & Logging</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Graphic & Motion Design -->
+    <div class="service-card reveal">
+      <div class="service-card-inner">
+        <div class="service-icon-wrap"><span class="service-icon">🎬</span></div>
+        <h3 class="service-title">Graphic & Motion Design</h3>
+        <p class="service-desc">Creating visually engaging graphics and animations to enhance your digital presence.</p>
+        <ul class="service-features">
+          <li>✓ After Effects & Premiere</li>
+          <li>✓ Motion Graphics</li>
+          <li>✓ Branding & Illustration</li>
+          <li>✓ Social Media Content</li>
+        </ul>
+        <a href="./contact.html" class="service-cta">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      <!-- Footer -->
+
+ <!-- ===== FOOTER SECTION ===== -->
+<footer class="main-footer">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <h2 class="footer-logo"><span class="gradient-text">Dev.</span>VM</h2>
+        <p class="footer-desc">
+          Passionate frontend developer building elegant, high-performance web apps.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">UI/UX Design</a></li>
+          <li><a href="#services">Frontend Development</a></li>
+          <li><a href="#services">Backend Integration</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +91 7011228875</p>
+        <p><i class="fas fa-envelope"></i> vishalmohanta2207@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rampura, Sector 83, Gurgaon</p>
+
+        <div class="social-links">
+          <a href="https://github.com/your-username" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/your-handle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:vishalmohanta2207@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="services-cta-section">
-      <h2 class="cta-title">Ready to start your project?</h2>
-      <a href="./contact.html" class="cta-btn">Let’s Work Together</a>
-    </section>
-  </main>
- <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-bg"></div>
-        <div class="footer-content">
-            <div class="footer-social-row">
-                <a href="https://github.com/your-github" target="_blank" aria-label="GitHub" class="footer-social-link">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.41-5.27 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn" class="footer-social-link">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.75 20h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm15.25 11.25h-3v-5.5c0-1.32-.03-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.6h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
-                </a>
-                <a href="mailto:your@email.com" aria-label="Email" class="footer-social-link">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
-                </a>
-                <a href="https://twitter.com/your-twitter" target="_blank" aria-label="Twitter" class="footer-social-link">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482c-4.083-.205-7.697-2.16-10.125-5.134a4.822 4.822 0 0 0-.664 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.012 10.012 0 0 0 2.457-2.548z"/></svg>
-                </a>
-            </div>
-            <div class="footer-text">
-                <span>&copy; 2025 Vishal.</span>
-                <span>Made with <span class="footer-heart">❤</span> and <span class="footer-highlight">creativity</span>.</span>
-            </div>
-        </div>
-        <div class="footer-animated-bar"></div>
-    </footer>
-  <script src="./my.js/servcice.js"></script>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span class="gradient-text">Vishal Mohanta</span>. All Rights Reserved.</p>
+      <p>Made with <span class="footer-heart">❤</span> & creativity</p>
+    </div>
+  </div>
+</footer>
+  <!-- JS -->
+  <script src="./my.js/service.js"></script>
+  <script src="./my.js/main.js"></script>
 </body>
 </html>

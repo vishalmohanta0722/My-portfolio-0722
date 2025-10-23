@@ -42,62 +42,150 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 // footer section
+// Reveal footer sections when visible
+document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.querySelector(".main-footer");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        footer.querySelectorAll(".footer-brand, .footer-links, .footer-contact")
+          .forEach(el => el.classList.add("footer-visible"));
+      }
+    });
+  }, { threshold: 0.2 });
 
-// Footer animation (optional: scroll to top on click)
-document.querySelector('.main-footer').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  observer.observe(footer);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for footer links
+    document.querySelectorAll('.footer-links a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
-// changes in hero section profile image on hover
-// Rotating hero quotes
-const quotes = [
-    "Code is like humor. When you have to explain it, it’s bad.",
-    "First, solve the problem. Then, write the code.",
-    "Simplicity is the soul of efficiency.",
-    "Great web experiences are built, not bought.",
-    "Creativity is intelligence having fun.",
-    "Design is not just what it looks like and feels like. Design is how it works."
-];
-let quoteIndex = 0;
-const quoteEl = document.getElementById('heroQuote');
-if (quoteEl) {
-    setInterval(() => {
-        quoteIndex = (quoteIndex + 1) % quotes.length;
-        quoteEl.style.opacity = 0;
-        setTimeout(() => {
-            quoteEl.textContent = `"${quotes[quoteIndex]}"`;
-            quoteEl.style.opacity = 0.92;
-        }, 400);
-    }, 3500);
+    // Social links hover effect
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.style.transform = 'translateY(-5px) rotate(5deg)';
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            icon.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+
+    // Copy email on click
+    const emailElement = document.querySelector('.footer-contact span:nth-child(2)');
+    if (emailElement) {
+        emailElement.style.cursor = 'pointer';
+        emailElement.setAttribute('title', 'Click to copy email');
+        
+        emailElement.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(emailElement.textContent);
+                showToast('Email copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy email:', err);
+            }
+        });
+    }
+});
+
+// Toast notification
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #6366f1;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        animation: slideIn 0.3s ease forwards;
+        z-index: 1000;
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease forwards';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
 }
 // changes in index about section
-// ...existing code...
+// Project Cards Interactivity and Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
 
-// Animate About Me section on scroll (optional)
-const aboutCards = document.querySelectorAll('.about-card-glass, .about-skills-glass');
-const aboutObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('animate__fadeInUp');
-        }
+    // Add hover effect
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-10px)
+            `;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
     });
-}, { threshold: 0.2 });
 
-aboutCards.forEach(card => {
-    aboutObserver.observe(card);
-});
+    // Add scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-// project section in index
-// ...existing code...
+    projectCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
+    });
 
-// Optional: Add keyboard accessibility for flip cards
-document.querySelectorAll('.project-flip-card').forEach(card => {
-    card.tabIndex = 0;
-    card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            card.querySelector('.project-flip-inner').classList.toggle('flipped');
-        }
+    // Add click tracking
+    document.querySelectorAll('.project-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const projectCard = e.target.closest('.project-card');
+            const projectName = projectCard.dataset.project;
+            console.log(`Project clicked: ${projectName}`);
+        });
     });
 });
 
@@ -156,15 +244,244 @@ document.addEventListener('DOMContentLoaded', function () {
 //services section//
 // Fade-in animation for home service cards
 document.addEventListener('DOMContentLoaded', function() {
-  const cards = document.querySelectorAll('.home-service-card');
-  const revealCards = () => {
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 60) {
-        card.classList.add('visible');
-      }
+    // Service Cards Animation
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-  };
-  window.addEventListener('scroll', revealCards);
-  revealCards();
+
+    // Initialize service cards
+    serviceCards.forEach((card, index) => {
+        // Set initial state
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        // Add transition
+        card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Add delay based on index
+        card.style.transitionDelay = `${index * 0.1}s`;
+        
+        // Observe card
+        observer.observe(card);
+
+        // Mouse move effect
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-10px)
+            `;
+        });
+
+        // Reset on mouse leave
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
 });
+
+// resume section //
+document.addEventListener('DOMContentLoaded', function() {
+    // Track resume interactions
+    const viewBtn = document.querySelector('.view-btn');
+    const downloadBtn = document.querySelector('.download-btn');
+
+    if (viewBtn) {
+        viewBtn.addEventListener('click', function() {
+            console.log('Resume viewed');
+            // Add your analytics tracking here
+        });
+    }
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            console.log('Resume downloaded');
+            
+            // Show success message
+            const toast = document.createElement('div');
+            toast.className = 'download-toast';
+            toast.textContent = 'Resume download started!';
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #10B981;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                animation: slideIn 0.3s ease forwards;
+                z-index: 1000;
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        });
+    }
+});
+
+// Add these animations to your CSS
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+`);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Contact card hover effects
+    const contactCards = document.querySelectorAll('.contact-card');
+    
+    contactCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-10px)
+            `;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.transition = 'all 0.5s ease';
+        });
+    });
+
+    // Track contact interactions
+    const contactButtons = document.querySelectorAll('.contact-btn');
+    contactButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const type = btn.textContent.trim();
+            console.log(`Contact interaction: ${type}`);
+            // Add your analytics tracking here
+        });
+    });
+
+    // Copy email to clipboard functionality
+    const emailValue = document.querySelector('.contact-value');
+    if (emailValue && emailValue.textContent.includes('@')) {
+        emailValue.style.cursor = 'pointer';
+        emailValue.setAttribute('title', 'Click to copy email');
+        
+        emailValue.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(emailValue.textContent);
+                showToast('Email copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy email:', err);
+            }
+        });
+    }
+});
+
+// Toast notification function
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #6366f1;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        animation: slideIn 0.3s ease forwards;
+        z-index: 1000;
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease forwards';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+// social links//
+// Social Links Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const socialLinks = document.querySelectorAll('.social-link');
+    
+    socialLinks.forEach(link => {
+        // Add hover animations
+        link.addEventListener('mouseenter', function() {
+            // Scale up and add glow effect
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+            this.style.boxShadow = '0 5px 15px rgba(99, 102, 241, 0.4)';
+            
+            // Rotate icon slightly
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.style.transform = 'rotate(8deg) scale(1.2)';
+            }
+        });
+
+        link.addEventListener('mouseleave', function() {
+            // Reset to original state
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = 'none';
+            
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.style.transform = 'rotate(0) scale(1)';
+            }
+        });
+
+        // Add click effect
+        link.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+    });
+});
+
+// Add these styles to your CSS file
