@@ -73,16 +73,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Social links hover effect
-    const socialIcons = document.querySelectorAll('.social-icon');
-    socialIcons.forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.style.transform = 'translateY(-5px) rotate(5deg)';
-        });
+// Animate social icons when they appear in view
+document.addEventListener("DOMContentLoaded", () => {
+  const socials = document.querySelectorAll(".social-links a");
 
-        icon.addEventListener('mouseleave', () => {
-            icon.style.transform = 'translateY(0) rotate(0)';
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        socials.forEach((icon, i) => {
+          setTimeout(() => {
+            icon.classList.add("visible");
+          }, i * 150); // Staggered animation
         });
+      }
     });
+  });
+
+  const footerSection = document.querySelector(".footer-contact");
+  if (footerSection) observer.observe(footerSection);
+});
+
+  observer.observe(document.querySelector(".footer-contact"));
+});
 
     // Copy email on click
     const emailElement = document.querySelector('.footer-contact span:nth-child(2)');
@@ -99,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+
 
 // Toast notification
 function showToast(message) {
