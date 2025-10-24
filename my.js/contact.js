@@ -1,120 +1,66 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+// contact.js
 
-    const form = document.getElementById('contactForm');
-    const toast = document.getElementById('toast');
-    
-    // Form submission handler
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
 
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
+  // ✅ Replace with your Discord Webhook URL
+  const WEBHOOK_URL = "https://discord.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxxxxx";
 
-        // Validate form
-        if (!validateForm(formData)) {
-            return;
-        }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        try {
-            // Simulate form submission (replace with your actual API endpoint)
-            await submitForm(formData);
-            showToast('Message sent successfully!', 'success');
-            form.reset();
-        } catch (error) {
-            showToast('Failed to send message. Please try again.', 'error');
-            console.error('Error:', error);
-        }
-    });
+    // Get values from form fields
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    // Form validation
-    function validateForm(data) {
-        // Check for empty fields
-        for (let key in data) {
-            if (!data[key].trim()) {
-                showToast(`Please fill in your ${key}`, 'error');
-                return false;
-            }
-        }
-
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            showToast('Please enter a valid email address', 'error');
-            return false;
-        }
-
-        // Validate phone number
-        const phoneRegex = /^\+?[\d\s-]{10,}$/;
-        if (!phoneRegex.test(data.phone)) {
-            showToast('Please enter a valid phone number', 'error');
-            return false;
-        }
-
-        return true;
+    if (!name || !email || !phone || !message) {
+      formMessage.textContent = "⚠️ Please fill all fields.";
+      formMessage.style.color = "orange";
+      return;
     }
 
-    // Form submission function
-    async function submitForm(data) {
-        // Replace with your actual API endpoint
-        const response = await fetch('your-api-endpoint', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+    // Create message payload for Discord
+    const discordData = {
+      username: "Portfolio Contact Form",
+      avatar_url: "https://cdn-icons-png.flaticon.com/512/906/906343.png",
+      embeds: [
+        {
+          title: "📩 New Contact Message!",
+          color: 3447003, // Discord embed blue
+          fields: [
+            { name: "👤 Name", value: name, inline: false },
+            { name: "📧 Email", value: email, inline: false },
+            { name: "📞 Phone", value: phone, inline: false },
+            { name: "💬 Message", value: message, inline: false },
+          ],
+          footer: { text: "From Vishal's Portfolio Website" },
+          timestamp: new Date().toISOString(),
+        },
+      ],
+    };
 
-        if (!response.ok) {
-            throw new Error('Failed to send message');
-        }
+    try {
+      // Send data to Discord webhook
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(discordData),
+      });
 
-        return response.json();
+      if (response.ok) {
+        formMessage.textContent = "✅ Message sent successfully!";
+        formMessage.style.color = "green";
+        form.reset();
+      } else {
+        throw new Error("Webhook request failed");
+      }
+    } catch (error) {
+      console.error(error);
+      formMessage.textContent = "❌ Failed to send message. Try again later.";
+      formMessage.style.color = "red";
     }
-
-    // Toast notification
-    function showToast(message, type) {
-        const toast = document.getElementById('toast');
-        const toastMessage = toast.querySelector('.toast-message');
-        const toastIcon = toast.querySelector('.toast-icon');
-        
-        toastMessage.textContent = message;
-        toastIcon.className = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}`;
-        toast.className = `toast show ${type}`;
-        
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
-    }
-
-    // Input animations
-    const inputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
-    
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            input.parentElement.classList.add('focused');
-        });
-
-        input.addEventListener('blur', () => {
-            if (!input.value) {
-                input.parentElement.classList.remove('focused');
-            }
-        });
-
-        // Set initial state for pre-filled inputs
-        if (input.value) {
-            input.parentElement.classList.add('focused');
-        }
-    });
+  });
 });

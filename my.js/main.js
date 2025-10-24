@@ -485,3 +485,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add these styles to your CSS file
+
+// Smooth 3D hover effect on hero glass card
+document.addEventListener("DOMContentLoaded", () => {
+  const card = document.querySelector(".hero-glass-card");
+
+  if (!card) return;
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Cursor X inside card
+    const y = e.clientY - rect.top;  // Cursor Y inside card
+
+    const rotateY = ((x / rect.width) - 0.5) * 20;  // Max rotation: 20deg
+    const rotateX = ((y / rect.height) - 0.5) * -20;
+
+    card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.05)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.classList.add("reset");
+    setTimeout(() => {
+      card.classList.remove("reset");
+      card.style.transform = "";
+    }, 800);
+  });
+});

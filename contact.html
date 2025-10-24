@@ -1,142 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Vishal's Portfolio</title>
-    <link rel="stylesheet" href="./style.css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vishal | Developer Portfolio</title>
+    <meta name="description" content="Vishal's modern developer portfolio. Projects, skills, resume, and contact." />
+    <meta property="og:title" content="Vishal | Developer Portfolio" />
+    <meta property="og:description" content="Modern, elegant, and responsive developer portfolio." />
+    <meta property="og:image" content="profile.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
+    <!-- Google Fonts: Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./style.css/stylesheet.css" />
+       <link rel="stylesheet" href="./style.css/contact.css" />
+
 </head>
 <body>
-    <!-- Place this at the top of your <body> -->
+<!-- Place this at the top of your <body> -->
+    
 <header class="main-header">
     <div class="logo">
         <a href="./index.html" aria-label="Vishal Home">
             <img src="./Green and White Modern Computer Service Repair Logo.png" alt="Vishal Logo" class="logo-img" />
-            <span class="logo-text">DEV.VM<span class="logo-dot">.</span></span>
-        </a>
+         <span class="gradient-text">Dev.VM<span class="logo-dot"></span></span>
     </div>
     <nav class="navbar" id="navbar">
         <ul>
-            <li><a href="./index.html" class="nav-link ">Home</a></li>
-            <li><a href="./about.html" class="nav-link ">About</a></li>
+            <li><a href="./index.html" class="nav-link active">Home</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
             <li><a href="./projects.html" class="nav-link">Projects</a></li>
             <li><a href="#resume" class="nav-link">Resume</a></li>
-            <li><a href="./contact.html" class="nav-link active">Contact</a></li>
-            <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            <li><a href="./contact.html" class="nav-link">Contact</a></li>
+    
             <li><a href="./services.html" class="nav-link">Services</a></li>
         </ul>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Open navigation">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
         <span></span>
         <span></span>
         <span></span>
     </button>
 </header>
+
+
     <!-- Hero Section -->
-    <section class="contact-hero">
+    <section class="hero-contact">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Get In Touch</h1>
-            <p class="hero-subtitle">Let's create something amazing together!</p>
-        </div>
-        <div class="hero-background">
-            <div class="gradient-orb"></div>
-            <div class="gradient-orb"></div>
+            <h1>Let's Build Something Amazing Together!</h1>
+            <p>Whether it’s a new project, collaboration, or just a chat, I’m always open to exciting opportunities.</p>
+            <a href="#contactForm" class="btn-hero">Reach Out Now</a>
         </div>
     </section>
 
-    <!-- Contact Grid Section -->
-    <section class="contact-grid">
-        <!-- Contact Info Cards -->
-        <div class="contact-info">
-            <div class="info-card" data-aos="fade-right">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <p>+91 7428791116</p>
-                <a href="tel:+917428791116" class="card-link">Call Now</a>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <!-- Left: Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Contact Me</h2>
+                <p>Have a project or want to get in touch? Send me a message and I’ll respond as soon as possible.</p>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
             </div>
 
-            <div class="info-card" data-aos="fade-right" data-aos-delay="100">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p>Vishalmohanta2207@gmail.com</p>
-                <a href="mailto:Vishalmohanta2207@gmail.com" class="card-link">Send Email</a>
+            <!-- Right: Details Section -->
+            <div class="contact-details">
+                <h2>Contact Details</h2>
+                <p>You can also reach me via the following methods:</p>
+                
+                <div class="details-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>hello@vishal.dev</p>
+                        <a href="mailto:hello@vishal.dev" class="btn-detail">Email Now</a>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 7011228875</p>
+                        <a href="tel:+917011228875" class="btn-detail">Call Now</a>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Rampura, Sector 83, Gurgaon</p>
+                        <a href="https://www.google.com/maps" target="_blank" class="btn-detail">View Map</a>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>Check my projects</p>
+                        <a href="https://github.com/your-username" target="_blank" class="btn-detail">Visit GitHub</a>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="info-card" data-aos="fade-right" data-aos-delay="200">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                <p>Gurgaon, India</p>
-                <a href="#map" class="card-link">View Map</a>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <form id="contactForm" class="contact-form glass-morphism" data-aos="fade-left">
-            <div class="form-group">
-                <input type="text" id="name" required>
-                <label for="name">Full Name</label>
-                <div class="input-highlight"></div>
-            </div>
-
-            <div class="form-group">
-                <input type="email" id="email" required>
-                <label for="email">Email Address</label>
-                <div class="input-highlight"></div>
-            </div>
-
-            <div class="form-group">
-                <input type="tel" id="phone" required>
-                <label for="phone">Phone Number</label>
-                <div class="input-highlight"></div>
-            </div>
-
-            <div class="form-group">
-                <select id="subject" required>
-                    <option value="">Select a Subject</option>
-                    <option value="project">Project Inquiry</option>
-                    <option value="collaboration">Collaboration</option>
-                    <option value="other">Other</option>
-                </select>
-                <div class="input-highlight"></div>
-            </div>
-
-            <div class="form-group">
-                <textarea id="message" required></textarea>
-                <label for="message">Your Message</label>
-                <div class="input-highlight"></div>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                <span>Send Message</span>
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </form>
-    </section>
-
-    <!-- Map Section -->
-    <section id="map" class="map-section" data-aos="fade-up">
-        <div class="map-container glass-morphism">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6357976561586!2d77.0592929!3d28.4589863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzMyLjQiTiA3N8KwMDMnMzMuNSJF!5e0!3m2!1sen!2sin!4v1629789012345!5m2!1sen!2sin"
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
         </div>
     </section>
+    <!-- Footer -->
 
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <div class="toast-content">
-            <i class="toast-icon"></i>
-            <span class="toast-message"></span>
+ <!-- ===== FOOTER SECTION ===== -->
+<footer class="main-footer">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <h2 class="footer-logo"><span class="gradient-text">Dev.</span>VM</h2>
+        <p class="footer-desc">
+          Passionate frontend developer building elegant, high-performance web apps.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">UI/UX Design</a></li>
+          <li><a href="#services">Frontend Development</a></li>
+          <li><a href="#services">Backend Integration</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +91 7011228875</p>
+        <p><i class="fas fa-envelope"></i> vishalmohanta2207@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rampura, Sector 83, Gurgaon</p>
+
+        <div class="social-links">
+          <a href="https://github.com/your-username" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/your-handle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:vishalmohanta2207@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span class="gradient-text">Vishal Mohanta</span>. All Rights Reserved.</p>
+      <p>Made with <span class="footer-heart">❤</span> & creativity</p>
+    </div>
+  </div>
+</footer>
+    <script src="./my.js/main.js"></script>
     <script src="./my.js/contact.js"></script>
 </body>
 </html>

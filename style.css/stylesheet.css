@@ -157,6 +157,48 @@ ul {
   margin: 0 auto;
   text-align: center;
 }
+/* ===== Hero Glass Card Base Style ===== */
+.hero-glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+/* Smooth hover (lift + glow) */
+.hero-glass-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 35px rgba(0, 255, 204, 0.4);
+  border-color: rgba(0, 255, 204, 0.4);
+}
+
+/* Optional hover text and button accent */
+.hero-glass-card:hover h1,
+.hero-glass-card:hover p {
+  color: #00ffc8;
+  transition: color 0.4s ease;
+}
+
+.hero-glass-card:hover .hero-btn {
+  background: linear-gradient(90deg, #00ffc8, #00b7ff);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+/* Reset tilt when mouse leaves */
+.hero-glass-card.reset {
+  transform: rotateY(0deg) rotateX(0deg) scale(1);
+  transition: transform 0.8s ease;
+}
+
 .hero-glass-card h1 {
   font-size: 2.2rem;
   font-family: 'Poppins', sans-serif;
@@ -181,7 +223,7 @@ ul {
   50% { transform: rotate(10deg);}
 }
 .hero-desc {
-  color: rgba(0, 0, 0, 0.767);
+  color:whitesmoke;
   font-size: 1.15rem;
   margin-bottom: 18px;
 }
@@ -250,7 +292,7 @@ background: linear-gradient(135deg, #0582a5, #acb6e5e1);
 .about-profile-img {
   width: 620px;
   height: 420px;
-margin-left: 100px;
+margin-left: 00px;
   object-fit: cover;
   border: 4px solid #6366f1;
   box-shadow: 0 2px 16px #6366f122;
@@ -295,6 +337,9 @@ margin-left: 100px;
   transition: transform 0.25s, box-shadow 0.25s;
   position: relative;
   overflow: hidden;
+  margin-bottom: 10px;
+  color:whitesmoke;
+ 
 }
 .about-card-glass:hover,
 .about-skills-glass:hover {
@@ -355,6 +400,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 .projects-header {
     text-align: center;
     margin-bottom: 4rem;
+    
 }
 
 .projects-label {
@@ -384,6 +430,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     max-width: 1400px;
     margin: 0 auto;
     padding: 1rem;
+    
 }
 
 .project-card {
@@ -394,6 +441,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .project-card:hover {
@@ -404,6 +452,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 .project-content {
     position: relative;
     z-index: 2;
+ 
 }
 
 .project-icon-wrap {
@@ -428,12 +477,12 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 
 .project-title {
     font-size: 1.5rem;
-    color: #fff;
+  color: #6366f1;
     margin-bottom: 1rem;
 }
 
 .project-description {
-    color: #94a3b8;
+    color: whitesmoke;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -1237,14 +1286,14 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 
 .section-title {
     font-size: 2.5rem;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
 .services-intro {
     max-width: 600px;
     margin: 0 auto;
-    color: #94a3b8;
+    color: whitesmoke;
     font-size: 1.1rem;
     line-height: 1.6;
 }
@@ -1276,6 +1325,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 .service-card-inner {
     position: relative;
     z-index: 2;
+  
 }
 
 .service-icon-wrap {
@@ -1299,13 +1349,13 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 .service-title {
-    color: #fff;
+     color: #6366f1;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .service-desc {
-    color: #94a3b8;
+    color:white;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -1317,7 +1367,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 .service-features li {
-    color: #cbd5e1;
+    color: whitesmoke;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -1602,7 +1652,7 @@ background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 .resume-intro {
     max-width: 600px;
     margin: 0 auto;
-    color: #94a3b8;
+    color: whitesmoke;
     font-size: 1.1rem;
     line-height: 1.6;
 }
