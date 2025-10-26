@@ -56,3 +56,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 40);
   });
 });
+
+// hero services//
+// === Simple Parallax Scroll Effect ===
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.services-hero::before');
+  const scrollY = window.scrollY * 0.4;
+  document.querySelector('.services-hero').style.backgroundPositionY = `${scrollY}px`;
+});
+
+
+//image and details section// 
+// Simple fade-in animation for service section
+const serviceSection = document.querySelector('.service-section');
+
+window.addEventListener('scroll', () => {
+  const sectionPos = serviceSection.getBoundingClientRect().top;
+  const screenPos = window.innerHeight / 1.2;
+
+  if (sectionPos < screenPos) {
+    serviceSection.style.opacity = 1;
+    serviceSection.style.transform = 'translateY(0)';
+    serviceSection.style.transition = 'all 1s ease';
+  }
+});
+
+// Initial state
+serviceSection.style.opacity = 0;
+serviceSection.style.transform = 'translateY(50px)';

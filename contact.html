@@ -10,14 +10,18 @@
     <meta property="og:image" content="profile.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="favicon.ico" />
+<!-- Font Awesome 6 CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+
+/>
     <!-- Google Fonts: Inter & Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <!-- Animate.css CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="./style.css/stylesheet.css" />
-       <link rel="stylesheet" href="./style.css/contact.css" />
 
+    <link rel="stylesheet" href="./style.css/stylesheet.css" />
+    <link rel="stylesheet" href="./style.css/contact.css" />
 </head>
 <body>
 <!-- Place this at the top of your <body> -->
@@ -25,7 +29,7 @@
 <header class="main-header">
     <div class="logo">
         <a href="./index.html" aria-label="Vishal Home">
-            <img src="./Green and White Modern Computer Service Repair Logo.png" alt="Vishal Logo" class="logo-img" />
+            <img src="./image.jpeg/Green and White Modern Computer Service Repairsss Logo.png" alt="Vishal Logo" class="logo-img" />
          <span class="gradient-text">Dev.VM<span class="logo-dot"></span></span>
     </div>
     <nav class="navbar" id="navbar">
@@ -35,7 +39,6 @@
             <li><a href="./projects.html" class="nav-link">Projects</a></li>
             <li><a href="#resume" class="nav-link">Resume</a></li>
             <li><a href="./contact.html" class="nav-link">Contact</a></li>
-    
             <li><a href="./services.html" class="nav-link">Services</a></li>
         </ul>
     </nav>
@@ -45,89 +48,85 @@
         <span></span>
     </button>
 </header>
+<body>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Let's Connect!</h1>
+      <p>I’d love to hear about your project or ideas. Reach out and let’s create something impactful together.</p>
+    </div>
+
+    <div class="hero-right">
+      <img src="./image.jpeg/AdobeStock_1166587468_Preview-removebg-preview.png" alt="Contact Hero" />
+    </div>
+  </section>
+
+  <!-- ===== ICON SECTION ===== -->
+ <!-- ===== CONTACT ICONS SECTION ===== -->
+<div class="contact-icons">
+  <div class="icon-card">
+    <i class="fa-solid fa-phone"></i>
+    <h4>Phone</h4>
+    <p>+91 7011228875</p>
+  </div>
+
+  <div class="icon-card">
+    <i class="fa-solid fa-envelope"></i>
+    <h4>Email</h4>
+    <p>hello@vishal.dev</p>
+  </div>
+
+  <div class="icon-card">
+    <i class="fa-solid fa-location-dot"></i>
+    <h4>Location</h4>
+    <p>Rampura, Sector 83, Gurgaon</p>
+  </div>
+</div>
 
 
-    <!-- Hero Section -->
-    <section class="hero-contact">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Let's Build Something Amazing Together!</h1>
-            <p>Whether it’s a new project, collaboration, or just a chat, I’m always open to exciting opportunities.</p>
-            <a href="#contactForm" class="btn-hero">Reach Out Now</a>
+  <!-- ===== MAIN CONTACT SECTION ===== -->
+  <section class="contact-main">
+    <div class="contact-details">
+      <h2>Get in Touch</h2>
+      <p>I'm always open to discussing web development projects, creative ideas, or opportunities to be part of your visions.</p>
+
+      <div class="detail-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:vishalmohanta2207@gmail.com">vishalmohanta2207@gmail.com</a></p>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <!-- Left: Contact Form -->
-            <div class="contact-form-wrapper">
-                <h2>Contact Me</h2>
-                <p>Have a project or want to get in touch? Send me a message and I’ll respond as soon as possible.</p>
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Your Phone" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Send Message</button>
-                    <p id="formMessage" class="form-message"></p>
-                </form>
-            </div>
-
-            <!-- Right: Details Section -->
-            <div class="contact-details">
-                <h2>Contact Details</h2>
-                <p>You can also reach me via the following methods:</p>
-                
-                <div class="details-card">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <p>hello@vishal.dev</p>
-                        <a href="mailto:hello@vishal.dev" class="btn-detail">Email Now</a>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>+91 7011228875</p>
-                        <a href="tel:+917011228875" class="btn-detail">Call Now</a>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Rampura, Sector 83, Gurgaon</p>
-                        <a href="https://www.google.com/maps" target="_blank" class="btn-detail">View Map</a>
-                    </div>
-                </div>
-
-                <div class="details-card">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h3>GitHub</h3>
-                        <p>Check my projects</p>
-                        <a href="https://github.com/your-username" target="_blank" class="btn-detail">Visit GitHub</a>
-                    </div>
-                </div>
-
-            </div>
+      <div class="detail-item">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <h3>Phone</h3>
+          <p><a href="tel:+917011228875">+91 7011228875</a></p>
         </div>
-    </section>
-    <!-- Footer -->
+      </div>
 
+      <div class="detail-item">
+        <i class="fab fa-github"></i>
+        <div>
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/your-username" target="_blank">Visit Profile</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="tel" id="phone" placeholder="Your Phone" required />
+        <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </div>
+  </section>
  <!-- ===== FOOTER SECTION ===== -->
 <footer class="main-footer">
   <div class="footer-container">
@@ -165,6 +164,7 @@
       </div>
 
       <!-- Contact & Social -->
+ <!-- Contact & Social -->
       <div class="footer-contact">
         <h4>Contact</h4>
         <p><i class="fas fa-phone"></i> +91 7011228875</p>
@@ -186,7 +186,10 @@
     </div>
   </div>
 </footer>
-    <script src="./my.js/main.js"></script>
+
+
+  <!-- JS -->
+  <script src="./my.js/main.js"></script>
     <script src="./my.js/contact.js"></script>
 </body>
 </html>

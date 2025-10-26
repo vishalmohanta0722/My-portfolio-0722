@@ -61,16 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', revealOnScroll);
   
 // ===== FEATURED PROJECT ANIMATION =====
-document.addEventListener("DOMContentLoaded", () => {
-  const featuredSection = document.querySelector('.featured-project');
+// Reveal animation on scroll
+window.addEventListener('scroll', () => {
+  const section = document.querySelector('.featured-project');
+  const sectionTop = section.getBoundingClientRect().top;
+  const triggerPoint = window.innerHeight * 0.8;
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        featuredSection.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  if (featuredSection) observer.observe(featuredSection);
+  if (sectionTop < triggerPoint) {
+    section.classList.add('visible');
+  }
 });

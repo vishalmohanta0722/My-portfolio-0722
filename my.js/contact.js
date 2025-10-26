@@ -64,3 +64,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// Contact Form Handler
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !phone || !message) {
+    formMessage.textContent = "⚠️ Please fill in all fields.";
+    formMessage.style.color = "#ff8080";
+    return;
+  }
+
+  // Simulated message send delay
+  formMessage.textContent = "Sending...";
+  formMessage.style.color = "#a0e1ff";
+
+  setTimeout(() => {
+    formMessage.textContent = "✅ Your message has been sent successfully!";
+    formMessage.style.color = "#80ffb0";
+    contactForm.reset();
+  }, 1500);
+});
