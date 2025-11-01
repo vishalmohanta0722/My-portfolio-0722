@@ -67,20 +67,15 @@ window.addEventListener('scroll', () => {
 
 
 //image and details section// 
-// Simple fade-in animation for service section
-const serviceSection = document.querySelector('.service-section');
+// Simple scroll animation trigger
+window.addEventListener("scroll", () => {
+  const text = document.querySelector(".service-text");
+  const image = document.querySelector(".service-image");
+  const sectionPos = text.getBoundingClientRect().top;
+  const trigger = window.innerHeight / 1.2;
 
-window.addEventListener('scroll', () => {
-  const sectionPos = serviceSection.getBoundingClientRect().top;
-  const screenPos = window.innerHeight / 1.2;
-
-  if (sectionPos < screenPos) {
-    serviceSection.style.opacity = 1;
-    serviceSection.style.transform = 'translateY(0)';
-    serviceSection.style.transition = 'all 1s ease';
+  if (sectionPos < trigger) {
+    text.style.opacity = "1";
+    image.style.opacity = "1";
   }
 });
-
-// Initial state
-serviceSection.style.opacity = 0;
-serviceSection.style.transform = 'translateY(50px)';
