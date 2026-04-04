@@ -273,3 +273,12 @@ if (heroBtn) {
     }
   });
 }
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  // Delay (optional, makes it smoother)
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 500); // 0.5 sec delay
+});

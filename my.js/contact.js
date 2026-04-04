@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMessage = document.getElementById("formMessage");
 
   // ✅ Replace with your Discord Webhook URL
-  const WEBHOOK_URL = "https://discord.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxxxxx";
+  const WEBHOOK_URL = "https://discord.com/api/webhooks/1489849536250777762/MNrPowFUamqreZw1L31Ky8wOU_-25vZPM7Vq56W03GW1O5bRvDJ0uTK-o7OH-lxWa5uL";
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -91,4 +91,13 @@ contactForm.addEventListener("submit", async (e) => {
     formMessage.style.color = "#80ffb0";
     contactForm.reset();
   }, 1500);
+});
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  // Delay (optional, makes it smoother)
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 500); // 0.5 sec delay
 });
